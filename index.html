@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Vivek Arora — Product Manager</title>
+  <meta name="description" content="Product portfolio of Vivek Arora — professional and personal product building work." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <!-- ===== NAV ===== -->
+  <header class="nav">
+    <a href="#top" class="nav__brand">Vivek Arora<span class="nav__dot">.</span></a>
+    <nav class="nav__links">
+      <a href="#about">About</a>
+      <a href="#professional">Professional</a>
+      <a href="#personal">Personal</a>
+      <a href="#building">Building</a>
+      <a href="#contact" class="nav__cta">Contact</a>
+    </nav>
+  </header>
+
+  <!-- ===== HERO ===== -->
+  <section class="hero" id="top">
+    <div class="hero__glow" aria-hidden="true"></div>
+    <div class="hero__inner">
+      <div class="hero__text">
+        <p class="hero__status"><span class="dot"></span> Product Manager · FinTech &amp; Financial Services</p>
+        <h1 class="hero__title">I build data-driven products that simplify complex systems — and deliver measurable impact.</h1>
+        <p class="hero__lead">
+          Product Manager with 5+ years across payments, customer experience, and workflow
+          optimization. I pair a deep background in data analysis with a real interest in AI/ML to
+          build products that optimize experiences for internal and end users in B2B and B2B2C.
+        </p>
+        <div class="hero__actions">
+          <a href="#professional" class="btn btn--primary">See my work</a>
+          <a href="#contact" class="btn btn--ghost">Get in touch</a>
+        </div>
+      </div>
+      <div class="hero__photo">
+        <img src="images/headshot.jpg" alt="Vivek Arora" />
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== ABOUT ===== -->
+  <section class="about" id="about">
+    <div class="about__banner">
+      <img src="images/banner.png" alt="Vivek Arora — Product Manager" />
+    </div>
+    <div class="about__inner">
+      <h2 class="section__title">About</h2>
+      <p class="about__bio">
+        I'm a Product Manager with 5+ years experience solving payments, customer experience, and
+        workflow-optimization challenges in FinTech and Financial Services. I pair a deep background
+        in data analysis with a personal interest in AI/ML to build digital products that create
+        optimized experiences for internal and end users across B2B and B2B2C environments.
+      </p>
+      <p class="about__super">
+        <strong>My superpower</strong> is translating ambiguity in highly complex environments into
+        structured, user-focused product decisions that deliver measurable business value — and
+        adapting quickly to new industries and domains.
+      </p>
+      <div class="about__facts">
+        <span class="fact"><strong>Computershare</strong>Product Owner, today</span>
+        <span class="fact"><strong>ex-BMO</strong>Product Owner</span>
+        <span class="fact"><strong>$1.5M+</strong>operational cost saved</span>
+        <span class="fact"><strong>AI × Product</strong>what's next</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== PROFESSIONAL ===== -->
+  <section class="section" id="professional">
+    <div class="section__head">
+      <span class="section__index">01</span>
+      <div>
+        <h2 class="section__title">Professional</h2>
+        <p class="section__sub">Products I've owned and shipped in the field.</p>
+      </div>
+    </div>
+    <div class="grid" id="professional-grid"><!-- cards injected by app.js --></div>
+  </section>
+
+  <!-- ===== PERSONAL ===== -->
+  <section class="section section--dark" id="personal">
+    <div class="section__head">
+      <span class="section__index">02</span>
+      <div>
+        <h2 class="section__title">Personal</h2>
+        <p class="section__sub">Side projects, prototypes, and product experiments.</p>
+      </div>
+    </div>
+    <div class="grid" id="personal-grid"><!-- cards injected by app.js --></div>
+  </section>
+
+  <!-- ===== BUILDING IN PUBLIC (auto-synced from GitHub) ===== -->
+  <section class="section" id="building">
+    <div class="section__head">
+      <span class="section__index">03</span>
+      <div>
+        <h2 class="section__title">Building in public</h2>
+        <p class="section__sub">Latest from my GitHub — synced automatically every day.</p>
+      </div>
+    </div>
+    <div class="repo-grid" id="github-grid"><!-- repo cards injected by app.js from github.js --></div>
+  </section>
+  <style>
+    .repo-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(280px,1fr));gap:18px;max-width:1100px;margin:0 auto;padding:0 24px}
+    .repo-card{display:flex;flex-direction:column;gap:8px;padding:20px;border:1px solid rgba(124,58,237,.18);border-radius:16px;background:#fff;text-decoration:none;transition:transform .15s ease,box-shadow .15s ease,border-color .15s ease}
+    .repo-card:hover{transform:translateY(-3px);box-shadow:0 12px 30px rgba(124,58,237,.12);border-color:rgba(124,58,237,.4)}
+    .repo-card__name{font-family:'Space Grotesk',sans-serif;font-weight:600;font-size:1.05rem;color:#1e1b3a}
+    .repo-card__desc{font-size:.92rem;color:#5b6070;line-height:1.45;flex:1}
+    .repo-card__meta{font-size:.8rem;color:#8b8fa3;display:flex;gap:10px;flex-wrap:wrap}
+  </style>
+
+  <!-- ===== CONTACT / FOOTER ===== -->
+  <footer class="footer" id="contact">
+    <p class="footer__eyebrow">Let's talk product</p>
+    <h2 class="footer__title">Always up for a sharp conversation about building things people use.</h2>
+    <div class="footer__links">
+      <a href="mailto:vivekarora9899@gmail.com">vivekarora9899@gmail.com</a>
+      <a href="https://www.linkedin.com/in/vivekarora9" target="_blank" rel="noopener">LinkedIn</a>
+      <a href="https://github.com/vivekarora1107" target="_blank" rel="noopener">GitHub</a>
+    </div>
+    <p class="footer__note">© <span id="year"></span> Vivek Arora</p>
+  </footer>
+
+  <!-- ===== DETAIL MODAL ===== -->
+  <div class="modal" id="modal" hidden>
+    <div class="modal__backdrop" data-close></div>
+    <article class="modal__panel" role="dialog" aria-modal="true" aria-labelledby="modal-title">
+      <button class="modal__close" data-close aria-label="Close">&times;</button>
+      <div class="modal__body" id="modal-body"><!-- detail injected by app.js --></div>
+    </article>
+  </div>
+
+  <script src="content.js"></script>
+  <script src="github.js"></script>
+  <script src="app.js"></script>
+</body>
+</html>

@@ -1,0 +1,38 @@
+name: Sync GitHub projects to portfolio
+
+# Runs daily and whenever triggered manually. Reads your public repos,
+# regenerates github.js, and commits it if anything changed.
+on:
+  schedule:
+    - cron: '0 12 * * *' # 12:00 UTC daily
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  sync:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+
+      - name: Generate github.js from public repos
+        run: node scripts/sync-github.mjs
+        env:
+          GH_USER: vivekarora1107
+
+      - name: Commit if changed
+        run: |
+          if [ -n "$(git status --porcelain github.js)" ]; then
+            git config user.name "github-actions[bot]"
+            git config user.email "github-actions[bot]@users.noreply.github.com"
+            git add github.js
+            git commit -m "chore: sync GitHub projects [skip ci]"
+            git push
+          else
+            echo "No changes to github.js."
+          fi
