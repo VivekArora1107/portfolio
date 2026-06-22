@@ -103,6 +103,32 @@ const PROFESSIONAL = [
 
 const PERSONAL = [
   {
+    title: "Agentic Dev Flow",
+    tagline: "A multi-agent software pipeline that goes from 'no project' to 'shipped' — with a human on the two decisions that matter.",
+    org: "Open-Source Framework",
+    role: "Creator & Product Lead",
+    timeframe: "2026",
+    domain: "AI Agents · Workflow · 0→1",
+    impact: "Idea → shipped, human-gated",
+    image: "images/agentic-dev-flow.png",
+    tags: ["AI Agents", "Multi-Agent", "Human-in-the-Loop", "0→1", "Open-Source"],
+    challenge:
+      "Getting from a vague idea to a shipped product is a long chain — finding a solvable problem, research, a PRD, architecture, build, review, publish. Fully autonomous agent setups tend to remove the human from the highest-leverage decisions, so they build things nobody asked for or ship without oversight. The problem: how do you let agents do the heavy lifting while a human still owns the calls that are genuinely hard to undo?",
+    approach:
+      "I designed and built a portable multi-agent framework that runs on agent tooling you already have (Claude Code / Cowork's Agent tool) — no custom infrastructure. An orchestrator dispatches a research team and a dev team across three stages: discover (scout and rank solvable problems into a decision-ready brief), build (write a PRD you sign off on, then architect → build → review a working solution), and ship (publish to a public repo and add a portfolio entry). The core product decision was keeping a human at the two highest-leverage gates — which problem gets built, and whether it ships — plus an internal gate that pauses for PRD sign-off before any code is written. A self-contained single-file dashboard tracks every project's position across the pipeline and shows which gate is waiting on you.",
+    results: [
+      "Built a portable, template-based framework — role playbooks, three stage commands, an orchestrator, and a live dashboard — that runs on existing agent tooling with zero infrastructure to stand up.",
+      "Designed deliberate human-in-the-loop gates at the two decisions that are hard to undo (problem selection and shipping), plus a PRD sign-off before any code.",
+      "Shipped a self-contained, single-file status dashboard tracking every project across discover → build → ship.",
+      "Open-sourced under MIT as a template others can fork and adapt to their own domain and quality bar."
+    ],
+    reflection: "Leverage comes from keeping humans on the decisions that are hard to undo — not from maximizing autonomy.",
+    gallery: [],
+    links: [
+      { label: "GitHub repo", url: "https://github.com/VivekArora1107/agentic-dev-flow" }
+    ]
+  },
+  {
     title: "Spotify Circles",
     tagline: "A full, working social-listening app on top of Spotify — the conversation layer streaming never built.",
     org: "Personal Product Build",
@@ -154,6 +180,32 @@ const PERSONAL = [
     links: [
       { label: "GitHub repo", url: "https://github.com/vivekarora1107/knowledge-hub" }
     ]
+  },
+  {
+    title: "Agentic Dev Flow",
+    tagline: "A multi-agent software pipeline that researches, builds, and ships — with me holding the only two decisions that carry real risk.",
+    org: "Personal Product Build",
+    role: "Orchestrator & Builder",
+    timeframe: "2026",
+    domain: "AI Agents · Orchestration · 0→1",
+    impact: "Idea → reviewed build, human-gated",
+    image: "",
+    tags: ["AI Agents", "Multi-Agent Orchestration", "Human-in-the-loop", "0→1", "Tooling"],
+    challenge:
+      "Shipping 0→1 side projects is a manual slog, and the obvious fix — point AI agents at the whole thing — quietly gives away the two decisions that actually carry risk: which problem is worth solving, and whether something is good enough to put my name on. Full autonomy optimizes for activity; what I wanted was leverage without losing the wheel.",
+    approach:
+      "I built an orchestrator that runs a three-stage pipeline — discover → build → ship — by dispatching a research team and a dev team, each an agent loaded with a role playbook. The research team scouts and ranks solvable problems into a decision-ready brief; I pick. The dev team writes a PRD I sign off before any code, then architects, builds, and runs a skeptical review of a genuinely working solution. The orchestrator publishes only on my explicit go. Two hard human gates (pick the problem, approve the ship) plus a PRD-first internal gate are the whole design — the point isn't to remove me, it's to remove me from everything except the calls that matter. It runs on existing agent tooling as portable role playbooks, no infrastructure, and ships with a single-file live dashboard showing where every project sits and what's waiting on my decision.",
+    results: [
+      "Ran the full pipeline end-to-end — from a ranked problem brief through a signed-off PRD to a reviewed, working build — with the human gates holding at each step.",
+      "Built as portable role playbooks on existing agent tooling: an orchestrator, a 2-role research team, and a 3-role dev team, no custom infrastructure.",
+      "Designed a self-contained live dashboard surfacing each project's stage, the active team, and exactly what's waiting on me — honest status, not a faked real-time stream.",
+      "Packaged the whole thing as a reusable, MIT-licensed template others can fork and point at their own charter."
+    ],
+    reflection: "The point of agents isn't to take the human out of the loop — it's to take the human out of everything except the two decisions that carry real risk.",
+    gallery: [],
+    links: [
+      { label: "GitHub repo", url: "https://github.com/VivekArora1107/agentic-dev-flow" },
+      { label: "Live dashboard", url: "https://raw.githack.com/VivekArora1107/agentic-dev-flow/main/dashboard.html" }
+    ]
   }
-  // More personal projects coming: software-builder agent.
 ];
