@@ -210,6 +210,42 @@ a { color: inherit; text-decoration: none; }
 .section--dark .card__impact { background: rgba(217,138,82,.16); color: var(--accent-2); }
 .section--dark .card__more { color: var(--accent-2); }
 
+/* ===== HOW I THINK ===== */
+.thinking__grid {
+  max-width: var(--maxw); margin: 0 auto;
+  display: grid; grid-template-columns: 1.5fr 1fr; gap: 26px; align-items: start;
+}
+.teardown {
+  background: var(--surface); border: 1px solid var(--line); border-radius: var(--radius);
+  padding: clamp(26px, 4vw, 40px); box-shadow: var(--shadow);
+}
+.teardown__tag {
+  display: inline-block; font-size: 12px; font-weight: 600; letter-spacing: .06em;
+  text-transform: uppercase; color: var(--accent);
+  background: var(--accent-soft); border-radius: 999px; padding: 5px 13px; margin-bottom: 16px;
+}
+.teardown__title {
+  font-family: var(--font-display); font-weight: 600; font-size: clamp(21px, 3vw, 27px);
+  letter-spacing: -.02em; margin-bottom: 16px; line-height: 1.15;
+}
+.teardown p { color: var(--ink-soft); font-size: 16px; line-height: 1.7; margin-bottom: 14px; }
+.teardown p:last-child { margin-bottom: 0; }
+.teardown strong { color: var(--ink); }
+
+.process { display: flex; flex-direction: column; gap: 18px; }
+.process__block {
+  background: var(--surface); border: 1px solid var(--line); border-radius: var(--radius);
+  padding: 24px 26px; box-shadow: var(--shadow); border-left: 3px solid var(--accent);
+}
+.process__title {
+  font-family: var(--font-display); font-weight: 600; font-size: 17px; margin-bottom: 8px;
+}
+.process__block p { color: var(--ink-soft); font-size: 15px; line-height: 1.65; }
+
+@media (max-width: 820px) {
+  .thinking__grid { grid-template-columns: 1fr; }
+}
+
 /* ===== FOOTER ===== */
 .footer { text-align: center; padding: clamp(70px, 11vw, 120px) 20px 60px; max-width: 760px; margin: 0 auto; }
 .footer__eyebrow { text-transform: uppercase; letter-spacing: .14em; font-size: 13px; font-weight: 600; color: var(--accent); margin-bottom: 18px; }
@@ -247,6 +283,15 @@ a { color: inherit; text-decoration: none; }
 .modal__body p { color: var(--ink); font-size: 16px; }
 .modal__body ul { margin: 4px 0 0; padding-left: 20px; }
 .modal__body li { margin: 9px 0; font-size: 16px; }
+.modal__body .decision {
+  margin-top: 24px; padding: 16px 20px; border-radius: 14px;
+  background: #fff; border: 1px solid var(--accent); box-shadow: var(--shadow);
+  font-size: 16px; color: var(--ink); line-height: 1.6;
+}
+.modal__body .decision__label {
+  display: block; font-size: 12px; font-weight: 700; letter-spacing: .08em;
+  text-transform: uppercase; color: var(--accent); margin-bottom: 6px;
+}
 .modal__body .reflect {
   margin-top: 26px; padding: 18px 20px; border-left: 3px solid var(--accent);
   background: var(--accent-soft); border-radius: 0 12px 12px 0;

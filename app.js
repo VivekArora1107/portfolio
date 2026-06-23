@@ -12,7 +12,7 @@
       .replace(/"/g, "&quot;").replace(/'/g, "&#39;");
   };
 
-  // Warm, on-brand gradients used when a project has no image yet.
+  // On-brand gradients used when a project has no image yet.
   var GRADIENTS = [
     "linear-gradient(135deg, #7c3aed 0%, #a855f7 100%)",
     "linear-gradient(135deg, #1d1442 0%, #5b3aa8 100%)",
@@ -90,31 +90,6 @@
     }).join("") + "</div>";
   }
 
-  function githubCardHTML(repo) {
-    var meta = [];
-    if (repo.language) meta.push(escapeHTML(repo.language));
-    if (typeof repo.stars === "number" && repo.stars > 0) meta.push("★ " + repo.stars);
-    if (repo.updated) meta.push("Updated " + escapeHTML(repo.updated));
-    return (
-      '<a class="repo-card" href="' + escapeHTML(repo.url) + '" target="_blank" rel="noopener">' +
-        '<span class="repo-card__name">' + escapeHTML(repo.name) + "</span>" +
-        '<span class="repo-card__desc">' + escapeHTML(repo.description || "No description yet.") + "</span>" +
-        '<span class="repo-card__meta">' + meta.join(" · ") + "</span>" +
-      "</a>"
-    );
-  }
-
-  function renderGithub() {
-    var mount = document.getElementById("github-grid");
-    if (!mount) return;
-    var repos = typeof GITHUB_REPOS !== "undefined" ? GITHUB_REPOS : [];
-    if (!repos.length) {
-      mount.innerHTML = '<p class="card__tagline" style="padding:0 24px">Syncing from GitHub…</p>';
-      return;
-    }
-    mount.innerHTML = repos.map(githubCardHTML).join("");
-  }
-
   function openModal(category, index) {
     var p = store[category][index];
     if (!p) return;
@@ -128,6 +103,7 @@
       (p.impact ? '<span class="impact-badge">' + escapeHTML(p.impact) + "</span>" : "") +
       (p.challenge ? "<h4>The challenge</h4><p>" + escapeHTML(p.challenge) + "</p>" : "") +
       (p.approach ? "<h4>My approach</h4><p>" + escapeHTML(p.approach) + "</p>" : "") +
+      (p.decision ? '<p class="decision"><span class="decision__label">The call I made</span>' + escapeHTML(p.decision) + "</p>" : "") +
       (p.results && p.results.length ? "<h4>The outcome</h4>" + listHTML(p.results) : "") +
       (p.reflection ? '<p class="reflect">' + escapeHTML(p.reflection) + "</p>" : "") +
       galleryHTML(p.gallery) +
@@ -159,7 +135,6 @@
   function init() {
     renderGrid(typeof PROFESSIONAL !== "undefined" ? PROFESSIONAL : [], "professional", "professional-grid");
     renderGrid(typeof PERSONAL !== "undefined" ? PERSONAL : [], "personal", "personal-grid");
-    renderGithub();
 
     document.addEventListener("click", function (e) {
       var card = e.target.closest(".card");

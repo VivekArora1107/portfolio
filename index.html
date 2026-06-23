@@ -18,7 +18,7 @@
       <a href="#about">About</a>
       <a href="#professional">Professional</a>
       <a href="#personal">Personal</a>
-      <a href="#building">Building</a>
+      <a href="#thinking">Thinking</a>
       <a href="#contact" class="nav__cta">Contact</a>
     </nav>
   </header>
@@ -37,6 +37,7 @@
         </p>
         <div class="hero__actions">
           <a href="#professional" class="btn btn--primary">See my work</a>
+          <a href="resume.docx" class="btn btn--ghost" download>Download résumé</a>
           <a href="#contact" class="btn btn--ghost">Get in touch</a>
         </div>
       </div>
@@ -97,25 +98,66 @@
     <div class="grid" id="personal-grid"><!-- cards injected by app.js --></div>
   </section>
 
-  <!-- ===== BUILDING IN PUBLIC (auto-synced from GitHub) ===== -->
-  <section class="section" id="building">
+  <!-- ===== HOW I THINK ===== -->
+  <section class="section" id="thinking">
     <div class="section__head">
       <span class="section__index">03</span>
       <div>
-        <h2 class="section__title">Building in public</h2>
-        <p class="section__sub">Latest from my GitHub — synced automatically every day.</p>
+        <h2 class="section__title">How I Think</h2>
+        <p class="section__sub">Judgment over output — a product teardown and how I prioritize.</p>
       </div>
     </div>
-    <div class="repo-grid" id="github-grid"><!-- repo cards injected by app.js from github.js --></div>
+    <div class="thinking__grid">
+      <article class="teardown">
+        <span class="teardown__tag">Product teardown</span>
+        <h3 class="teardown__title">Spotify — the conversation layer it never built</h3>
+        <p>
+          Spotify is the best playback and personalization engine in music — and one of the weakest
+          at conversation. Its social surface is an afterthought: a desktop-only Friend Activity
+          sidebar, Blend, and the once-a-year Wrapped spike. So the most social part of music has
+          leaked out of the app into group chats and Instagram Stories — tools where a track isn't
+          playable and the moment disappears.
+        </p>
+        <p>
+          If I owned this, I wouldn't bolt a public feed onto the main app — it would fail, because
+          most of Spotify's base treats it as a utility and would never post, so the feed looks empty
+          and dies. I'd start narrower: a lightweight "share to a small circle" action on the
+          now-playing screen, defaulting to private groups rather than a public broadcast. Private,
+          low-stakes audiences are where people actually share music; public feeds invite performance
+          anxiety and silence.
+        </p>
+        <p>
+          The trade-off is reach for density — fewer posts, but from people who'll actually engage.
+          And the metric I'd hold it to isn't shares; it's <strong>weekly returning sharers</strong>,
+          because that's the loop that proves the behavior is real, not a launch novelty.
+        </p>
+      </article>
+      <aside class="process">
+        <div class="process__block">
+          <h4 class="process__title">How I prioritize</h4>
+          <p>
+            I run RICE to size incoming requests, then level the score against the longer-term
+            roadmap — a high-RICE quick win can still be the wrong thing if it pulls the team off a
+            strategic bet. When the two conflict, I make the call explicitly and reconvene with
+            stakeholders on the why and the timeline. Example: a welcome-flow request scored low on
+            RICE but mattered for fraud prevention, so it jumped the queue — a deliberate, communicated
+            override, not a silent reshuffle.
+          </p>
+        </div>
+        <div class="process__block">
+          <h4 class="process__title">Catching scope before it catches you</h4>
+          <p>
+            On the transfer comms rebrand, the brief said "27 letters." Doing the math — 27 letters ×
+            1,300 customers × 50 states — the real surface was ~175,000 variations and a six-month
+            build. Instead of absorbing that, I found the leverage: the cover letter was shared across
+            nearly every customer, so shipping the CTA on page one got the redirect live in a month and
+            protected ~$500K in overhead. In regulated systems, the leverage is in the architecture,
+            not the feature list.
+          </p>
+        </div>
+      </aside>
+    </div>
   </section>
-  <style>
-    .repo-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(280px,1fr));gap:18px;max-width:1100px;margin:0 auto;padding:0 24px}
-    .repo-card{display:flex;flex-direction:column;gap:8px;padding:20px;border:1px solid rgba(124,58,237,.18);border-radius:16px;background:#fff;text-decoration:none;transition:transform .15s ease,box-shadow .15s ease,border-color .15s ease}
-    .repo-card:hover{transform:translateY(-3px);box-shadow:0 12px 30px rgba(124,58,237,.12);border-color:rgba(124,58,237,.4)}
-    .repo-card__name{font-family:'Space Grotesk',sans-serif;font-weight:600;font-size:1.05rem;color:#1e1b3a}
-    .repo-card__desc{font-size:.92rem;color:#5b6070;line-height:1.45;flex:1}
-    .repo-card__meta{font-size:.8rem;color:#8b8fa3;display:flex;gap:10px;flex-wrap:wrap}
-  </style>
 
   <!-- ===== CONTACT / FOOTER ===== -->
   <footer class="footer" id="contact">
@@ -139,7 +181,6 @@
   </div>
 
   <script src="content.js"></script>
-  <script src="github.js"></script>
   <script src="app.js"></script>
 </body>
 </html>
